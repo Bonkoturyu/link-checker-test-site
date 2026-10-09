@@ -1,0 +1,85 @@
+{
+  "synthetic": true,
+  "source_pages": 2,
+  "link_occurrences": 12,
+  "expected_counts": {
+    "working": 9,
+    "missing_resource": 2,
+    "missing_fragment": 1
+  },
+  "cases": [
+    {
+      "case": 1,
+      "source": "index.html",
+      "href": "ok.html",
+      "expected": "working"
+    },
+    {
+      "case": 2,
+      "source": "index.html",
+      "href": "missing.html",
+      "expected": "missing_resource"
+    },
+    {
+      "case": 3,
+      "source": "index.html",
+      "href": "ok.html#section-1",
+      "expected": "working"
+    },
+    {
+      "case": 4,
+      "source": "index.html",
+      "href": "ok.html#absent",
+      "expected": "missing_fragment"
+    },
+    {
+      "case": 5,
+      "source": "index.html",
+      "href": "nested/page.html",
+      "expected": "working"
+    },
+    {
+      "case": 6,
+      "source": "index.html",
+      "href": "%E6%97%A5%E6%9C%AC%E8%AA%9E.html#%E9%A0%85%E7%9B%AE",
+      "expected": "working"
+    },
+    {
+      "case": 7,
+      "source": "index.html",
+      "href": "assets/sample.txt",
+      "expected": "working"
+    },
+    {
+      "case": 8,
+      "source": "index.html",
+      "href": "ok.html",
+      "expected": "working"
+    },
+    {
+      "case": 9,
+      "source": "nested/page.html",
+      "href": "../ok.html",
+      "expected": "working"
+    },
+    {
+      "case": 10,
+      "source": "nested/page.html",
+      "href": "../ok.html#section-1",
+      "expected": "working"
+    },
+    {
+      "case": 11,
+      "source": "nested/page.html",
+      "href": "../missing-deep.html",
+      "expected": "missing_resource"
+    },
+    {
+      "case": 12,
+      "source": "nested/page.html",
+      "href": "../%E6%97%A5%E6%9C%AC%E8%AA%9E.html#%E9%A0%85%E7%9B%AE",
+      "expected": "working"
+    }
+  ],
+  "purpose": "Expected static fixture outcomes, not a hosted HTTP measurement"
+}
